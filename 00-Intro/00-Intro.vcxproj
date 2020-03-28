@@ -122,7 +122,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CAnimation.cpp" />
+    <ClCompile Include="CAnimationFrame.cpp" />
+    <ClCompile Include="CAnimations.cpp" />
+    <ClCompile Include="CGame.cpp" />
+    <ClCompile Include="CGameObject.cpp" />
+    <ClCompile Include="CSprite.cpp" />
+    <ClCompile Include="CSpriteManagement.cpp" />
+    <ClCompile Include="CTextures.cpp" />
+    <ClCompile Include="debug.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CAnimation.h" />
+    <ClInclude Include="CAnimationFrame.h" />
+    <ClInclude Include="CAnimations.h" />
+    <ClInclude Include="CGame.h" />
+    <ClInclude Include="CGameObject.h" />
+    <ClInclude Include="CSprite.h" />
+    <ClInclude Include="CSpriteManagement.h" />
+    <ClInclude Include="CTextures.h" />
+    <ClInclude Include="debug.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
