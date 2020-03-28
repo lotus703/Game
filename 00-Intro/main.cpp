@@ -35,8 +35,8 @@ WARNING: This example contains a hell LOT of *sinful* programming practices
 #define MAIN_WINDOW_TITLE L"00 - Intro"
 
 #define BACKGROUND_COLOR D3DCOLOR_XRGB(200, 200, 255)
-#define SCREEN_WIDTH 320
-#define SCREEN_HEIGHT 240
+#define SCREEN_WIDTH 620
+#define SCREEN_HEIGHT 440
 
 #define MAX_FRAME_RATE 60
 
@@ -47,7 +47,6 @@ WARNING: This example contains a hell LOT of *sinful* programming practices
  
 
 CGame* game;
-//Mario* mario;
 CGameObject* mario;
 
 
@@ -111,7 +110,7 @@ void LoadResources()
 	mario->AddAnimation(500);
 	mario->AddAnimation(501);
 
-	mario->SetPosition(10.0f, 100.0f);
+	mario->SetPosition(0.0f, 0.0f);
 }
 
 /*
