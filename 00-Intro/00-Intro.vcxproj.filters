@@ -13,66 +13,96 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Extra">
+      <UniqueIdentifier>{efe8829e-fe32-4cc7-adc4-9818749788f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{7edf6838-e16b-4068-a6b9-d16c1caa81c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite">
+      <UniqueIdentifier>{44d37eab-d6ff-4e4f-b020-c295cc238049}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{6cba9cc8-8dfe-41e9-9c7e-aee2299bab2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{4c11f782-9dca-4397-9de0-90061a10ad1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{171af5b9-330c-48ac-8d66-2aca5008aaae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="debug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CGameObject.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="CTexture.cpp">
+      <Filter>Extra</Filter>
     </ClCompile>
     <ClCompile Include="CTextures.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Texture</Filter>
     </ClCompile>
     <ClCompile Include="CSprite.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Sprite</Filter>
     </ClCompile>
     <ClCompile Include="CSpriteManagement.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="CGame.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameObject.cpp">
+      <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="CAnimation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CAnimations.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Animation</Filter>
     </ClCompile>
     <ClCompile Include="CAnimationFrame.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimations.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexturesManagement.cpp">
+      <Filter>Extra</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CGame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CGameObject.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CTexture.h">
+      <Filter>Extra</Filter>
     </ClInclude>
     <ClInclude Include="CTextures.h">
-      <Filter>Header Files</Filter>
+      <Filter>Texture</Filter>
     </ClInclude>
     <ClInclude Include="CSprite.h">
-      <Filter>Header Files</Filter>
+      <Filter>Sprite</Filter>
     </ClInclude>
     <ClInclude Include="CSpriteManagement.h">
-      <Filter>Header Files</Filter>
+      <Filter>Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="CAnimation.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CGame.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameObject.h">
+      <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="CAnimations.h">
-      <Filter>Header Files</Filter>
+      <Filter>Animation</Filter>
     </ClInclude>
     <ClInclude Include="CAnimationFrame.h">
-      <Filter>Header Files</Filter>
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimation.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexturesManagement.h">
+      <Filter>Extra</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

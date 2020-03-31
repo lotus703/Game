@@ -43,11 +43,13 @@ WARNING: This example contains a hell LOT of *sinful* programming practices
 #define ID_TEX_MARIO 0
 #define ID_TEX_ENEMY 10
 #define ID_TEX_MISC 20
+#define ID_TEX_SIMON 30
 
  
 
 CGame* game;
 CGameObject* mario;
+ 
 
 
 LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -70,14 +72,20 @@ LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 void LoadResources()
 {
 	CTextures* textures = CTextures::GetInstance();
-
-	textures->Add(ID_TEX_MARIO, L"textures\\mario.png", D3DCOLOR_XRGB(176, 224, 248));
-
 	CSpriteManagement* sprites = CSpriteManagement::GetInstance();
 	CAnimations* animations = CAnimations::GetInstance();
 
+	textures->Add(ID_TEX_MARIO, L"textures\\mario.png", D3DCOLOR_XRGB(176, 224, 248));
+	textures->Add(ID_TEX_SIMON, L"textures\\simon.png", D3DCOLOR_XRGB(255, 0, 255));
+	//textures->Add(ID_TEX_MISC, L"textures\\misc.png", D3DCOLOR_XRGB(156, 219, 239));
+
+
+	
+
 	LPDIRECT3DTEXTURE9 texMario = textures->Get(ID_TEX_MARIO);
-	// readline => id, left, top, right, bottom
+	LPDIRECT3DTEXTURE9 texSimon = textures->Get(ID_TEX_SIMON);
+	// readline => id, left, top, right 
+
 	sprites->Add(10001, 246, 154, 259, 181, texMario);
 	sprites->Add(10002, 275, 154, 290, 181, texMario);
 	sprites->Add(10003, 304, 154, 321, 181, texMario);
@@ -85,32 +93,41 @@ void LoadResources()
 	sprites->Add(10011, 186, 154, 199, 181, texMario);
 	sprites->Add(10012, 155, 154, 170, 181, texMario);
 	sprites->Add(10013, 125, 154, 140, 181, texMario);
-
-	LPDIRECT3DTEXTURE9 texMisc = textures->Get(ID_TEX_MISC);
-	sprites->Add(20001, 300, 117, 315, 132, texMisc);
-	sprites->Add(20002, 318, 117, 333, 132, texMisc);
-	sprites->Add(20003, 336, 117, 351, 132, texMisc);
-	sprites->Add(20004, 354, 117, 369, 132, texMisc);
-
+  //simon vx > 1
+	sprites->Add(20001, 753, 3, 777, 64, texSimon);
+	sprites->Add(20002, 807, 4, 837, 64, texSimon);
+	sprites->Add(20003, 871, 2, 895, 64, texSimon);
+	sprites->Add(20004, 929, 4, 961, 64, texSimon);
+ //simon vx < 1
+	sprites->Add(30001, 196, 3, 220, 64, texSimon);
+	sprites->Add(30002, 136, 4, 166, 64, texSimon);
+	sprites->Add(30003, 78, 2, 102, 64, texSimon);
+	sprites->Add(30004, 12, 4, 44, 64, texSimon);
 	LPANIMATION ani;
 
 	ani = new CAnimation(100);
-	ani->Add(10001);
-	ani->Add(10002);
-	ani->Add(10003);
+	ani->Add(20001);
+	ani->Add(20002);
+	ani->Add(20003);
+	ani->Add(20004);
 	animations->Add(500, ani);
 
 	ani = new CAnimation(100);
-	ani->Add(10011);
-	ani->Add(10012);
-	ani->Add(10013);
+	ani->Add(30001);
+	ani->Add(30002);
+	ani->Add(30003);
+	ani->Add(30004);
 	animations->Add(501, ani);
+
+ 
 
 	mario = new CGameObject();
 	mario->AddAnimation(500);
 	mario->AddAnimation(501);
+	//mario->AddAnimation(510);
 
-	mario->SetPosition(0.0f, 0.0f);
+
+	mario->SetPosition(10.0f, 100.0f);
 }
 
 /*

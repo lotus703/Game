@@ -129,9 +129,11 @@
     <ClCompile Include="CGameObject.cpp" />
     <ClCompile Include="CSprite.cpp" />
     <ClCompile Include="CSpriteManagement.cpp" />
+    <ClCompile Include="CTexture.cpp" />
     <ClCompile Include="CTextures.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="CTexturesManagement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAnimation.h" />
@@ -141,8 +143,10 @@
     <ClInclude Include="CGameObject.h" />
     <ClInclude Include="CSprite.h" />
     <ClInclude Include="CSpriteManagement.h" />
+    <ClInclude Include="CTexture.h" />
     <ClInclude Include="CTextures.h" />
     <ClInclude Include="debug.h" />
+    <ClInclude Include="CTexturesManagement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
