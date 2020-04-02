@@ -1,22 +1,30 @@
-#pragma once
+﻿#pragma once
 #include <Windows.h>
 #include <d3dx9.h>
-#include <unordered_map>
+#include "CTexture.h"
 
 using namespace std;
 
 class CSprite
 {
-	int id;				// Sprite ID in the sprite database
-	int left;
-	int top;
-	int right;
-	int bottom;
-
-	LPDIRECT3DTEXTURE9 texture;
+private:
+	LPD3DXSPRITE spriteHandler;
+	int currentFrame, totalFrames;
 public:
-	CSprite(int id, int left, int top, int right, int bottom, LPDIRECT3DTEXTURE9 tex);
+	CSprite(CTexture* texture, DWORD timeAnimation);
+	virtual ~CSprite();
 
-	void Draw(float x, float y);
+	CTexture* texture;
+	DWORD timeAccumulated;	 // thời gian chờ đã tích lũy
+	DWORD timeAnimation; // thời gian phải chờ giữa các frame
+	RECT GetRectFrame(int idFrame);
+	void NextFrame();
+	void ResetTime();
+	void SelectFrame(int idFrame);
+	void Update(DWORD dt);
+	void Draw(float x, float y, int alpha = 255, int R = 255, int G=255, int B =255);
+	void DrawFrame(int idFrame, float X, float Y, int alpha = 255, int R = 255, int G = 255, int B = 255);
+	int GetCurrentFrame();
+	int GetTotalFrames();
 };
 

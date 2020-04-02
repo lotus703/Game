@@ -1,18 +1,21 @@
 #pragma once
-
+ 
 #include <unordered_map>
-#include "CTextures.h"
+#include "Define.h"
+#include "CTexture.h"
+
 class CTexturesManagement
 {
-	unordered_map<int, CTextures*> _ListTextures;
+	unordered_map<eType,CTexture*> _ListTextures;
 public:
 	static CTexturesManagement* __Instance;
 	static CTexturesManagement* GetInstance();
 
-	void AddTexture(int id, CTextures* texture);
-	CTextures* GetTexture(int id);
+	void AddTexture(eType type, CTexture* texture);
+	CTexture* GetTexture(eType type);
 	void LoadResource();
 	CTexturesManagement();
 	~CTexturesManagement();
 };
 
+ 

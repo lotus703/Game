@@ -6,13 +6,14 @@ CTexturesManagement* CTexturesManagement::GetInstance()
 		__Instance = new CTexturesManagement();
 	return __Instance;
 }
-void CTexturesManagement::AddTexture(int id, CTextures* texture)
+void CTexturesManagement::AddTexture(eType type, CTexture* texture)
 {
-	_ListTextures[id] = texture;
+	_ListTextures[type] = texture;
 }
 void CTexturesManagement::LoadResource()
 {
 	//code
+	AddTexture(eType::SIMON, new CTexture("Resources/simon.png", 8, 3, 24));
 }
 CTexturesManagement::CTexturesManagement()
 {
@@ -25,4 +26,8 @@ CTexturesManagement::~CTexturesManagement()
 		delete(__Instance);
 		__Instance = nullptr;
 	}
+}
+CTexture * CTexturesManagement::GetTexture(eType type)
+{
+	return _ListTextures[type];
 }

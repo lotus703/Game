@@ -31,6 +31,15 @@
     <Filter Include="Debug">
       <UniqueIdentifier>{171af5b9-330c-48ac-8d66-2aca5008aaae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Keyboard">
+      <UniqueIdentifier>{86ff22bb-8a8a-4705-b68e-05532a0c6c28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Simon">
+      <UniqueIdentifier>{f711a0da-e190-4fd9-893a-207e2f978da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Define">
+      <UniqueIdentifier>{a4260963-7db6-4299-abdf-3a821d581c8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -69,6 +78,12 @@
     <ClCompile Include="CTexturesManagement.cpp">
       <Filter>Extra</Filter>
     </ClCompile>
+    <ClCompile Include="Simon.cpp">
+      <Filter>Simon</Filter>
+    </ClCompile>
+    <ClCompile Include="Define.cpp">
+      <Filter>Define</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CTexture.h">
@@ -103,6 +118,12 @@
     </ClInclude>
     <ClInclude Include="CTexturesManagement.h">
       <Filter>Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="Simon.h">
+      <Filter>Simon</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>Define</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

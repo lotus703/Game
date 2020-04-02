@@ -31,6 +31,7 @@ WARNING: This example contains a hell LOT of *sinful* programming practices
 #include "CSpriteManagement.h"
 #include "CAnimations.h"
 #include "CAnimation.h"
+#include "Simon.h"
 #define WINDOW_CLASS_NAME L"SampleWindow"
 #define MAIN_WINDOW_TITLE L"00 - Intro"
 
@@ -48,9 +49,40 @@ WARNING: This example contains a hell LOT of *sinful* programming practices
  
 
 CGame* game;
-CGameObject* mario;
+Simon* simon;
  
+class CSampleKeyHander : public CKeyEventHandler
+{
+	virtual void KeyState(BYTE* states);
+	virtual void OnKeyDown(int KeyCode);
+	virtual void OnKeyUp(int KeyCode);
+};
+CSampleKeyHander* keyHandler;
 
+void CSampleKeyHander::OnKeyDown(int KeyCode)
+{
+	DebugOut(L"[INFO] KeyDown: %d\n", KeyCode);
+	switch (KeyCode)
+	{
+	case DIK_SPACE:
+		simon->SetState(SIMON_STATE_JUMP);
+		break;
+	}
+}
+
+void CSampleKeyHander::OnKeyUp(int KeyCode)
+{
+	DebugOut(L"[INFO] KeyUp: %d\n", KeyCode);
+}
+
+void CSampleKeyHander::KeyState(BYTE* states)
+{
+	if (game->IsKeyDown(DIK_RIGHT))
+		simon->SetState(SIMON_STATE_WALKING_RIGHT);
+	else if (game->IsKeyDown(DIK_LEFT))
+		simon->SetState(SIMON_STATE_WALKING_LEFT);
+	else simon->SetState(SIMON_STATE_IDLE);
+}
 
 LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -121,13 +153,13 @@ void LoadResources()
 
  
 
-	mario = new CGameObject();
-	mario->AddAnimation(500);
-	mario->AddAnimation(501);
+	simon = new Simon();
+	simon->AddAnimation(500);
+	simon->AddAnimation(501);
 	//mario->AddAnimation(510);
 
 
-	mario->SetPosition(10.0f, 100.0f);
+	simon->SetPosition(10.0f, 100.0f);
 }
 
 /*
@@ -136,7 +168,7 @@ void LoadResources()
 */
 void Update(DWORD dt)
 {
-	mario->Update(dt);
+	simon->Update(dt);
 }
 
 /*
@@ -154,7 +186,7 @@ void Render()
 
 		spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 
-		mario->Render();
+		simon->Render();
 		 
 
 		spriteHandler->End();

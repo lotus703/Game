@@ -132,8 +132,10 @@
     <ClCompile Include="CTexture.cpp" />
     <ClCompile Include="CTextures.cpp" />
     <ClCompile Include="debug.cpp" />
+    <ClCompile Include="Define.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CTexturesManagement.cpp" />
+    <ClCompile Include="Simon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAnimation.h" />
@@ -147,6 +149,8 @@
     <ClInclude Include="CTextures.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="CTexturesManagement.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="Simon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
